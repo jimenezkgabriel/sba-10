@@ -1,16 +1,5 @@
-# React + Vite
+1. The most challenging part of the project for you.
+> Time management. But besides that, there was an interesting thought of using a Context over a cutom hook and vice versa. I could have used a custom hook for the favorites list instead of a FavoritesContext no? Another hard challenge was needing to use useMemo as a solution for a useEffect with the mounting and firing once on initial load/mount. More challenges is component design, figuring out what's a component and what can be just included within the component that doesn't really need to be a component. Favoriting a recipe was also a challenge as I couldn't quite figure out how to represent it in the React way. Turns out I didn't need to load a list of favorites at hand at any time, forgot that localStorage is like a dictionary structure, just give it a key "favorites" and it returns a list of the favorites at any time you need to provide that key. When favorites page mounts, I call on the context (which I could just call useLocalStorage directly with the key). Search results thankfully the API had a return for a keyword and all recipes matching that keyword, such as just one letter.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. A brief explanation of a design decision you made (e.g., why you structured a hook a certain way, how you decided to manage a piece of state).
+> When some implementation didn't quite work, I had the help of AI to explain the proper solution/implemntation (such as that useMemo()). useFetch() at first only returned the data I wanted but later realized a isLoading useState can be housed from that hook too. Had some practicing destructuring data too, as the meals API returns some stuff I don't need, and I didn't really need to call meal.strMeal or meal.mealId and stick it to every spot that needed it
